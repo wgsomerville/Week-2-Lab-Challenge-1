@@ -20,6 +20,8 @@
 		429277A4198F391500E19641 /* CreateStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429277A3198F391500E19641 /* CreateStatusViewController.swift */; };
 		429277A6198F392800E19641 /* CreatePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429277A5198F392800E19641 /* CreatePhotoViewController.swift */; };
 		429277A8198F393500E19641 /* CreateCheckinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429277A7198F393500E19641 /* CreateCheckinViewController.swift */; };
+		A4715A721C84A1960009D406 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4715A711C84A1960009D406 /* Common.swift */; };
+		A4715A741C84A20E0009D406 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4715A731C84A20E0009D406 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		429277A3198F391500E19641 /* CreateStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStatusViewController.swift; sourceTree = "<group>"; };
 		429277A5198F392800E19641 /* CreatePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePhotoViewController.swift; sourceTree = "<group>"; };
 		429277A7198F393500E19641 /* CreateCheckinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCheckinViewController.swift; sourceTree = "<group>"; };
+		A4715A711C84A1960009D406 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A4715A731C84A20E0009D406 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		42167652198E3220008CCBC3 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
+				A4715A711C84A1960009D406 /* Common.swift */,
 				42167674198EAAC6008CCBC3 /* View Controllers */,
 				42167655198E3220008CCBC3 /* AppDelegate.swift */,
 				42167659198E3220008CCBC3 /* Main.storyboard */,
@@ -137,6 +142,7 @@
 				429277A3198F391500E19641 /* CreateStatusViewController.swift */,
 				429277A5198F392800E19641 /* CreatePhotoViewController.swift */,
 				429277A7198F393500E19641 /* CreateCheckinViewController.swift */,
+				A4715A731C84A20E0009D406 /* LoginViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -187,7 +193,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = codepath;
 				TargetAttributes = {
 					4216764F198E3220008CCBC3 = {
@@ -242,10 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4715A741C84A20E0009D406 /* LoginViewController.swift in Sources */,
 				429277A0198F068E00E19641 /* StoryViewController.swift in Sources */,
 				429277A2198F35B600E19641 /* MessagesViewController.swift in Sources */,
 				42167676198ECA7C008CCBC3 /* NotificationsViewController.swift in Sources */,
 				42167656198E3220008CCBC3 /* AppDelegate.swift in Sources */,
+				A4715A721C84A1960009D406 /* Common.swift in Sources */,
 				429277A6198F392800E19641 /* CreatePhotoViewController.swift in Sources */,
 				429277A4198F391500E19641 /* CreateStatusViewController.swift in Sources */,
 				429277A8198F393500E19641 /* CreateCheckinViewController.swift in Sources */,
@@ -305,6 +313,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -370,6 +379,7 @@
 				INFOPLIST_FILE = Facebook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -382,6 +392,7 @@
 				INFOPLIST_FILE = Facebook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -400,6 +411,7 @@
 				);
 				INFOPLIST_FILE = FacebookTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -415,6 +427,7 @@
 				);
 				INFOPLIST_FILE = FacebookTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
