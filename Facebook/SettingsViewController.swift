@@ -13,10 +13,22 @@ class SettingsViewController: UIViewController, UIActionSheetDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var settingsImageView: UIImageView!
     
+    var alertController : UIAlertController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollView.contentSize = CGSizeMake(320, settingsImageView.image!.size.height)
+        
+        alertController = UIAlertController(title: "Logout?", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let logoutAction = UIAlertAction(title: "Logout", style: .Destructive, handler: { (action) -> Void in
+                self.performSegueWithIdentifier("logoutSegue", sender: self)
+            })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // handle case of user canceling. Doing nothing will dismiss the view.
+        }
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -33,14 +45,10 @@ class SettingsViewController: UIViewController, UIActionSheetDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func logoutPressed(sender: AnyObject) {
+        self.presentViewController(self.alertController, animated: true, completion: { () -> Void in })
     }
-    */
-
+    
+    
 }
+

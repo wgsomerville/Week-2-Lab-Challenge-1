@@ -56,9 +56,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" id="7Ag-qK-h6b">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ekX-PI-kK8">
+                                        <rect key="frame" x="8" y="1756" width="312" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="logoutPressed:" destination="GN8-BO-wIX" eventType="touchUpInside" id="qju-Kt-GVd"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -69,6 +77,7 @@
                         <outlet property="scrollView" destination="ANT-7m-nRG" id="qB6-WE-6Ew"/>
                         <outlet property="searchDisplayController" destination="Dty-X5-9c1" id="oV2-wK-vbu"/>
                         <outlet property="settingsImageView" destination="7Ag-qK-h6b" id="lhW-Ya-7U2"/>
+                        <segue destination="HwH-Di-0xX" kind="modal" identifier="logoutSegue" id="cJi-tY-TnR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2U-Qo-aLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,6 +161,10 @@
                                             <segue destination="4dZ-Wz-S84" kind="push" id="wkZ-i9-nuQ"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="SEZ-a8-a0l">
+                                        <rect key="frame" x="151" y="152" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.82745098039215681" green="0.83921568627450982" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
@@ -191,6 +204,7 @@
                     <navigationItem key="navigationItem" id="m9U-cv-OHe"/>
                     <connections>
                         <outlet property="feedImageView" destination="BFk-jQ-UCW" id="FKQ-21-8kr"/>
+                        <outlet property="loadingIndicator" destination="SEZ-a8-a0l" id="DaB-1X-EAD"/>
                         <outlet property="scrollView" destination="YZ6-vp-O3X" id="Pgj-Be-1bK"/>
                     </connections>
                 </viewController>
